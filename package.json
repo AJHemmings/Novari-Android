@@ -1,0 +1,19 @@
+{
+  "name": "novari-remastered",
+  "version": "0.1.0",
+  "description": "Novari Remastered - Mobile-first app for personal growth through Embers, Tasks, and Streaks",
+  "private": true,
+  "workspaces": [
+    "apps/mobile",
+    "apps/backend"
+  ],
+  "scripts": {
+    "mobile": "cd apps/mobile && npm start",
+    "backend": "cd apps/backend && npm run dev",
+    "dev": "concurrently \"npm run mobile\" \"npm run backend\"",
+    "install:all": "npm install && npm --workspace=apps/mobile install && npm --workspace=apps/backend install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
